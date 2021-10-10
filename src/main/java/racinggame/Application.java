@@ -1,7 +1,11 @@
 package racinggame;
 
+import racinggame.controller.RacingGameController;
+
 public class Application {
-    public static void main(String[] args) {
-        // TODO 자동차 경주 게임 구현
-    }
+	private static RacingGameController racingGameController = new RacingGameController();
+
+	public static void main(String[] args) {
+		racingGameController.run();
+	}
 }
