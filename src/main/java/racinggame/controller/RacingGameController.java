@@ -42,8 +42,14 @@ public class RacingGameController {
 	}
 
 	private RunCount inputRunCount() {
-		RunCount runCount = stringToRunCount(RacingGameView.inputRunCount());
-		racingGame.setInputSuccess(RacingGameConstant.InputSuccess.Success);
+		RunCount runCount = null;
+		try {
+			runCount = stringToRunCount(RacingGameView.inputRunCount());
+			racingGame.setInputSuccess(RacingGameConstant.InputSuccess.Success);
+		} catch (IllegalArgumentException e) {
+			RacingGameView.errorMessage(e.getMessage());
+			racingGame.setInputSuccess(RacingGameConstant.InputSuccess.Fail);
+		}
 		return runCount;
 	}
 
