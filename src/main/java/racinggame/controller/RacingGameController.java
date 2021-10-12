@@ -3,7 +3,7 @@ package racinggame.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import racinggame.RacingGameConstant;
+import racinggame.constant.RacingGameConstant;
 import racinggame.dto.RacingCar;
 import racinggame.dto.RacingCarName;
 import racinggame.dto.RacingCars;
@@ -44,7 +44,7 @@ public class RacingGameController {
 	private RunCount inputRunCount() {
 		RunCount runCount = null;
 		try {
-			runCount = stringToRunCount(RacingGameView.inputRunCount());
+			runCount = new RunCount(stringToInteger(RacingGameView.inputRunCount()));
 			racingGame.setInputSuccess(RacingGameConstant.InputSuccess.Success);
 		} catch (IllegalArgumentException e) {
 			RacingGameView.errorMessage(e.getMessage());
@@ -53,9 +53,9 @@ public class RacingGameController {
 		return runCount;
 	}
 
-	private RunCount stringToRunCount(String runCount) {
+	private Integer stringToInteger(String runCount) {
 		try {
-			return new RunCount(Integer.parseInt(runCount));
+			return Integer.parseInt(runCount);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("숫자형에 맞지않은 입력 값이 들어왔습니다");
 		}

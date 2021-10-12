@@ -1,6 +1,6 @@
 package racinggame.dto;
 
-import racinggame.RacingGameConstant;
+import racinggame.constant.RacingGameConstant;
 
 public class RacingGame {
 	private RacingGameConstant.InputSuccess inputSuccess;
