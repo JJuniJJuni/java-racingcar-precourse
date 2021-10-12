@@ -1,4 +1,4 @@
-package racinggame;
+package racinggame.constant;
 
 public class RacingGameConstant {
 	public enum InputSuccess {
