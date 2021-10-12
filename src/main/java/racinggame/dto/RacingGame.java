@@ -39,4 +39,10 @@ public class RacingGame {
 	private RacingGameConstant.MoveFlag goOrStop() {
 		return Randoms.pickNumberInRange(0, 9) > 3 ? RacingGameConstant.MoveFlag.Go : RacingGameConstant.MoveFlag.Stop;
 	}
+
+	public void turn() {
+		for (RacingCar racingCar : this.racingCars.getRacingCars()) {
+			racingCar.move(goOrStop());
+		}
+	}
 }
