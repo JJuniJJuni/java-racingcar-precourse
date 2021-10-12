@@ -11,6 +11,11 @@ public class RacingGameView {
 		return Arrays.asList(Console.readLine().replaceAll(" ", "").split(","));
 	}
 
+	public static String inputRunCount() {
+		System.out.println("시도할 회수는 몇회인가요?");
+		return Console.readLine().replaceAll(" ", "");
+	}
+
 	public static void errorMessage(String message) {
 		System.out.println("[ERROR] " + message);
 	}
