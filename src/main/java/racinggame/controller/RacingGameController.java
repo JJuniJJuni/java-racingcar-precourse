@@ -31,6 +31,7 @@ public class RacingGameController {
 			racingCars = stringsToRacingCars(RacingGameView.inputRacingCarNames());
 			racingGame.setInputSuccess(RacingGameConstant.InputSuccess.Success);
 		} catch (IllegalArgumentException e) {
+			RacingGameView.errorMessage(e.getMessage());
 			racingGame.setInputSuccess(RacingGameConstant.InputSuccess.Fail);
 		}
 		return racingCars;
