@@ -5,6 +5,7 @@ import racinggame.RacingGameConstant;
 public class RacingGame {
 	private RacingGameConstant.InputSuccess inputSuccess;
 	private RacingCars racingCars;
+	private RunCount runCount;
 
 	public RacingGame() {
 		this.inputSuccess = RacingGameConstant.InputSuccess.Fail;
@@ -24,5 +25,13 @@ public class RacingGame {
 
 	public void setRacingCars(RacingCars racingCars) {
 		this.racingCars = racingCars;
+	}
+
+	public RunCount getRunCount() {
+		return this.runCount;
+	}
+
+	public void setRunCount(RunCount runCount) {
+		this.runCount = runCount;
 	}
 }
