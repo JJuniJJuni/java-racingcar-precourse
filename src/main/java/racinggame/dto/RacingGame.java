@@ -1,5 +1,6 @@
 package racinggame.dto;
 
+import nextstep.utils.Randoms;
 import racinggame.constant.RacingGameConstant;
 
 public class RacingGame {
@@ -33,5 +34,9 @@ public class RacingGame {
 
 	public void setRunCount(RunCount runCount) {
 		this.runCount = runCount;
+	}
+
+	private RacingGameConstant.MoveFlag goOrStop() {
+		return Randoms.pickNumberInRange(0, 9) > 3 ? RacingGameConstant.MoveFlag.Go : RacingGameConstant.MoveFlag.Stop;
 	}
 }
