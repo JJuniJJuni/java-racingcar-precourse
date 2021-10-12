@@ -16,6 +16,7 @@ public class RacingGameController {
 
 	public void run() {
 		start();
+		proceed();
 	}
 
 	private void start() {
@@ -69,4 +70,11 @@ public class RacingGameController {
 		return new RacingCars(racingCars);
 	}
 
+	private void proceed() {
+		RacingGameView.printResultMessage();
+		for (int i = 0; i < racingGame.getRunCount().getRunCount(); i++) {
+			racingGame.turn();
+			RacingGameView.printCurrentRacingCars(racingGame.getRacingCars());
+		}
+	}
 }

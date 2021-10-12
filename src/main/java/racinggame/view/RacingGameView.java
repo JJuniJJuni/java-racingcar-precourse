@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import nextstep.utils.Console;
+import racinggame.dto.RacingCar;
+import racinggame.dto.RacingCars;
 
 public class RacingGameView {
 	public static List<String> inputRacingCarNames() {
@@ -14,6 +16,26 @@ public class RacingGameView {
 	public static String inputRunCount() {
 		System.out.println("시도할 회수는 몇회인가요?");
 		return Console.readLine().replaceAll(" ", "");
+	}
+
+	public static void printResultMessage() {
+		System.out.println();
+		System.out.println("실행 결과");
+	}
+
+	public static void printCurrentRacingCars(RacingCars racingCars) {
+		for (RacingCar racingCar : racingCars.getRacingCars()) {
+			System.out.print(racingCar.getRacingCarName() + " : ");
+			printBar(racingCar.getPosition().getPosition());
+		}
+		System.out.println();
+	}
+
+	private static void printBar(Integer count) {
+		for (int i = 0; i < count; i++) {
+			System.out.print("-");
+		}
+		System.out.println();
 	}
 
 	public static void errorMessage(String message) {

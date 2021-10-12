@@ -21,4 +21,9 @@ public class RacingCarName {
 			throw new IllegalArgumentException("요구 길이는 5이하 입니다");
 		}
 	}
+
+	@Override
+	public String toString() {
+		return this.racingCarName;
+	}
 }
