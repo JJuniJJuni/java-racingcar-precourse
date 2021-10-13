@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import racinggame.constant.RacingGameConstant;
+import racinggame.dto.Position;
 import racinggame.dto.RacingCar;
 import racinggame.dto.RacingCarName;
 import racinggame.dto.RacingCars;
@@ -17,6 +18,7 @@ public class RacingGameController {
 	public void run() {
 		start();
 		proceed();
+		end();
 	}
 
 	private void start() {
@@ -65,7 +67,7 @@ public class RacingGameController {
 	private RacingCars stringsToRacingCars(List<String> racingCarNamesString) {
 		List<RacingCar> racingCars = new ArrayList();
 		for (String racingCarNameString : racingCarNamesString) {
-			racingCars.add(new RacingCar(new RacingCarName(racingCarNameString)));
+			racingCars.add(new RacingCar(new RacingCarName(racingCarNameString), new Position(0)));
 		}
 		return new RacingCars(racingCars);
 	}
@@ -76,5 +78,9 @@ public class RacingGameController {
 			racingGame.turn();
 			RacingGameView.printCurrentRacingCars(racingGame.getRacingCars());
 		}
+	}
+
+	private void end() {
+		RacingGameView.printWinners(racingGame.getWinners());
 	}
 }

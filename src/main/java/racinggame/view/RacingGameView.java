@@ -41,4 +41,8 @@ public class RacingGameView {
 	public static void errorMessage(String message) {
 		System.out.println("[ERROR] " + message);
 	}
+
+	public static void printWinners(RacingCars winners) {
+		System.out.format("최종 우승자는 %s 입니다.\n", winners);
+	}
 }

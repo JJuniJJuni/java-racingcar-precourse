@@ -1,5 +1,6 @@
 package racinggame.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RacingCars {
@@ -19,5 +20,14 @@ public class RacingCars {
 			position = Integer.max(position, racingCar.getPosition().getPosition());
 		}
 		return new Position(position);
+	}
+
+	@Override
+	public String toString() {
+		List<String> racingCarNames = new ArrayList<>();
+		for (RacingCar racingCar : racingCars) {
+			racingCarNames.add(racingCar.getRacingCarName().getRacingCarName());
+		}
+		return String.join(",", racingCarNames);
 	}
 }
