@@ -6,11 +6,11 @@ public class RacingCar {
 	private RacingCarName racingCarName;
 	private Position position;
 
-	public RacingCar(RacingCarName racingCarName) {
+	public RacingCar(RacingCarName racingCarName, Position position) {
 		this.racingCarName = racingCarName;
-		this.position = new Position();
+		this.position = position;
 	}
-
+	
 	public RacingCarName getRacingCarName() {
 		return racingCarName;
 	}

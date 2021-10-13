@@ -1,5 +1,8 @@
 package racinggame.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import nextstep.utils.Randoms;
 import racinggame.constant.RacingGameConstant;
 
@@ -43,6 +46,21 @@ public class RacingGame {
 	public void turn() {
 		for (RacingCar racingCar : this.racingCars.getRacingCars()) {
 			racingCar.move(goOrStop());
+		}
+	}
+
+	public RacingCars getWinners() {
+		Position position = this.racingCars.maxPosition();
+		List<RacingCar> winners = new ArrayList<>();
+		for (RacingCar racingCar : this.racingCars.getRacingCars()) {
+			addWinner(position, racingCar, winners);
+		}
+		return new RacingCars(winners);
+	}
+
+	private void addWinner(Position position, RacingCar racingCar, List<RacingCar> winners) {
+		if (racingCar.getPosition().getPosition() == position.getPosition()) {
+			winners.add(racingCar);
 		}
 	}
 }

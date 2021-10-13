@@ -3,8 +3,8 @@ package racinggame.dto;
 public class Position {
 	private int position;
 
-	public Position() {
-		this.position = 0;
+	public Position(Integer position) {
+		this.position = position;
 	}
 
 	public void plus() {
