@@ -12,6 +12,6 @@ public class RacingCarNameTest {
 			.hasMessage("길이가 옳바르지 않습니다");
 		assertThatThrownBy(() -> new RacingCarName("testcar")).isInstanceOf(IllegalArgumentException.class)
 			.hasMessage("요구 길이는 5이하 입니다");
-		assertEquals((new RacingCarName("tesla")).getRacingCarName().length(), 5);
+		assertEquals((new RacingCarName("tesla")).value().length(), 5);
 	}
 }

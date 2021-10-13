@@ -14,7 +14,7 @@ public class RunCount {
 		}
 	}
 
-	public Integer getRunCount() {
+	public Integer value() {
 		return this.runCount;
 	}
 }

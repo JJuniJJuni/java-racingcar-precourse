@@ -74,7 +74,7 @@ public class RacingGameController {
 
 	private void proceed() {
 		RacingGameView.printResultMessage();
-		for (int i = 0; i < racingGame.getRunCount().getRunCount(); i++) {
+		for (int i = 0; i < racingGame.getRunCount().value(); i++) {
 			racingGame.turn();
 			RacingGameView.printCurrentRacingCars(racingGame.getRacingCars());
 		}

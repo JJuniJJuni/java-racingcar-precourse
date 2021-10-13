@@ -8,7 +8,7 @@ public class RacingCarName {
 		validate();
 	}
 
-	public String getRacingCarName() {
+	public String value() {
 		return racingCarName;
 	}
 

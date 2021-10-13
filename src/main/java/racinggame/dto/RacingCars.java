@@ -13,14 +13,14 @@ public class RacingCars {
 		validate();
 	}
 
-	public List<RacingCar> getRacingCars() {
+	public List<RacingCar> value() {
 		return racingCars;
 	}
 
 	public Position maxPosition() {
 		int position = -1;
 		for (RacingCar racingCar : this.racingCars) {
-			position = Integer.max(position, racingCar.getPosition().getPosition());
+			position = Integer.max(position, racingCar.getPosition().value());
 		}
 		return new Position(position);
 	}
@@ -28,7 +28,7 @@ public class RacingCars {
 	private Set<String> getRacingCarNameSet() {
 		Set<String> set = new HashSet<>();
 		for (RacingCar racingCar : racingCars) {
-			set.add(racingCar.getRacingCarName().getRacingCarName());
+			set.add(racingCar.value().value());
 		}
 		return set;
 	}
@@ -44,7 +44,7 @@ public class RacingCars {
 	public String toString() {
 		List<String> racingCarNames = new ArrayList<>();
 		for (RacingCar racingCar : racingCars) {
-			racingCarNames.add(racingCar.getRacingCarName().getRacingCarName());
+			racingCarNames.add(racingCar.value().value());
 		}
 		return String.join(",", racingCarNames);
 	}

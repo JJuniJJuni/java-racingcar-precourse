@@ -25,6 +25,6 @@ public class RacingCarsTest {
 		assertThatThrownBy(() -> new RacingCars(testRacingCars)).isInstanceOf(IllegalArgumentException.class)
 			.hasMessage("중복된 이름이 존재합니다");
 		testRacingCars.remove(1);
-		assertEquals(new RacingCars(testRacingCars).getRacingCars().size(), 2);
+		assertEquals(new RacingCars(testRacingCars).value().size(), 2);
 	}
 }

@@ -24,9 +24,9 @@ public class RacingGameView {
 	}
 
 	public static void printCurrentRacingCars(RacingCars racingCars) {
-		for (RacingCar racingCar : racingCars.getRacingCars()) {
-			System.out.print(racingCar.getRacingCarName() + " : ");
-			printBar(racingCar.getPosition().getPosition());
+		for (RacingCar racingCar : racingCars.value()) {
+			System.out.print(racingCar.value() + " : ");
+			printBar(racingCar.getPosition().value());
 		}
 		System.out.println();
 	}

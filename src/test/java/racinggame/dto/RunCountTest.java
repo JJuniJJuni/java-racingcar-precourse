@@ -12,6 +12,6 @@ public class RunCountTest {
 			.hasMessage("시도 회수는 0보다 큰 양수여야 합니다");
 		assertThatThrownBy(() -> new RunCount(-1)).isInstanceOf(IllegalArgumentException.class)
 			.hasMessage("시도 회수는 0보다 큰 양수여야 합니다");
-		assertEquals(new RunCount(4).getRunCount(), 4);
+		assertEquals(new RunCount(4).value(), 4);
 	}
 }

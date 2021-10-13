@@ -10,8 +10,8 @@ public class RacingCar {
 		this.racingCarName = racingCarName;
 		this.position = position;
 	}
-	
-	public RacingCarName getRacingCarName() {
+
+	public RacingCarName value() {
 		return racingCarName;
 	}
 

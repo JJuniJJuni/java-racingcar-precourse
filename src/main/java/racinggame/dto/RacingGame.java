@@ -44,7 +44,7 @@ public class RacingGame {
 	}
 
 	public void turn() {
-		for (RacingCar racingCar : this.racingCars.getRacingCars()) {
+		for (RacingCar racingCar : this.racingCars.value()) {
 			racingCar.move(goOrStop());
 		}
 	}
@@ -52,14 +52,14 @@ public class RacingGame {
 	public RacingCars getWinners() {
 		Position position = this.racingCars.maxPosition();
 		List<RacingCar> winners = new ArrayList<>();
-		for (RacingCar racingCar : this.racingCars.getRacingCars()) {
+		for (RacingCar racingCar : this.racingCars.value()) {
 			addWinner(position, racingCar, winners);
 		}
 		return new RacingCars(winners);
 	}
 
 	private void addWinner(Position position, RacingCar racingCar, List<RacingCar> winners) {
-		if (racingCar.getPosition().getPosition() == position.getPosition()) {
+		if (racingCar.getPosition().value() == position.value()) {
 			winners.add(racingCar);
 		}
 	}

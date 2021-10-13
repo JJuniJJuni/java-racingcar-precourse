@@ -23,21 +23,21 @@ public class RacingGameTest {
 
 	@Test
 	public void 최대값_검증() {
-		assertEquals(racingGame.getRacingCars().maxPosition().getPosition(), 4);
+		assertEquals(racingGame.getRacingCars().maxPosition().value(), 4);
 		addTestMaxRacingCar();
-		assertEquals(racingGame.getRacingCars().maxPosition().getPosition(), 10);
+		assertEquals(racingGame.getRacingCars().maxPosition().value(), 10);
 	}
 
 	@Test
 	public void 우승자_검증() {
-		assertEquals(racingGame.getWinners().getRacingCars().size(), 2);
+		assertEquals(racingGame.getWinners().value().size(), 2);
 		addTestMaxRacingCar();
-		assertEquals(racingGame.getWinners().getRacingCars().size(), 1);
+		assertEquals(racingGame.getWinners().value().size(), 1);
 	}
 
 	private void addTestMaxRacingCar() {
 		racingGame.getRacingCars()
-			.getRacingCars()
+			.value()
 			.add(new RacingCar(new RacingCarName("max"), new Position(10)));
 	}
 }
